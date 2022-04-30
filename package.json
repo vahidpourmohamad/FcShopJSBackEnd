@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "scripts": {
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
     "graphql": "^16.4.0",
     "graphql-tag": "^2.12.6",
     "mongoose": "^6.3.1"
+  } ,
+    "engines": {
+    "node": "12.x"
   }
 }
