@@ -14,7 +14,7 @@ const resolvers = {
   Query: {
     sayHi: () => "hello",
   },
-};
+}; 
 
 const server = new ApolloServer({
   typeDefs,
