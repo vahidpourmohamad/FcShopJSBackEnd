@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-   "scripts": {
+  "scripts": {
     "start": "node index.js"
   },
   "repository": {
@@ -19,11 +19,13 @@
   "homepage": "https://github.com/vahidpourmohamad/FcShopJSBackEnd#readme",
   "dependencies": {
     "apollo-server": "^3.6.7",
+    "bcryptjs": "^2.4.3",
     "graphql": "^16.4.0",
     "graphql-tag": "^2.12.6",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.1"
-  } ,
-    "engines": {
+  },
+  "engines": {
     "node": "12.x"
   }
 }
