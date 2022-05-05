@@ -19,6 +19,11 @@ module.exports = gql`
     material: String!
     createdAt: String!
   }
+  type Category{
+    id:ID!
+    name:String!
+    parentId:Int
+  }
   type User {
     id: ID!
     email: String!
@@ -36,6 +41,7 @@ module.exports = gql`
     getProducts: [Product]
     getProduct(productId: ID!): Product
     # TODO GetCategory Product
+    getCatgoreis: [Category]
     # TODO getbestPriceProdict
     # TODO getProdcuts List via categry
   }
