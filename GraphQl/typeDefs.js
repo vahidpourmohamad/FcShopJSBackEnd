@@ -37,6 +37,12 @@ module.exports = gql`
     confirmPassword: String!
     email: String!
   }
+  input CategoryInput {
+    name: String!
+    parentId: Int
+    imageSrc: String
+    uniUrl: String
+  }
   input ProductInput {
     pcode: String!
     name: String!
@@ -72,7 +78,7 @@ module.exports = gql`
     login(username: String!, password: String!): User!
     createProduct(ProductInput: ProductInput): Product
     deleteProduct(productID: ID!): String!
-    createCategory(body: String!): Product!
-    deleteCategory(productID: ID!): String!
+    createCategory(CategoryInput: CategoryInput!): Category!
+    deleteCategory(CategoryID: ID!): String!
   }
 `;

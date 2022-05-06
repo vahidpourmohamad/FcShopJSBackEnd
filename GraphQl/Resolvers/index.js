@@ -1,5 +1,6 @@
 const productResolvers = require("./productResolver");
 const usersResolvers = require("./userResolver");
+const categoryResolvers = require("./categoryResolver");
 // const commentsResolvers = require("./comments");
 
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
   Mutation: {
     ...usersResolvers.Mutation,
     ...productResolvers.Mutation,
+    ...categoryResolvers.Mutation,
   },
   //   Subscription: {
   //     ...postsResolvers.Subscription,
