@@ -1,6 +1,7 @@
-const { module, Schema } = require("mongoose");
+const { model, Schema } = require("mongoose");
+
 const productSchema = new Schema({
-  id: { type: String, default: "123456789" },
+  pcode: { type: String, default: "123456789" },
   name: { type: String, default: "ProductA" },
   category: { type: String, default: "None" },
   OLname: { type: String, default: "Produkt" },

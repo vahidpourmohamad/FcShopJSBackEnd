@@ -37,6 +37,23 @@ module.exports = gql`
     confirmPassword: String!
     email: String!
   }
+  input ProductInput {
+    pcode: String!
+    name: String!
+    category: String!
+    OLname: String!
+    price: String!
+    shortDescription: String!
+    LongDescription: String!
+    OLshortDescription: String!
+    OLLongDescription: String!
+    H: Float
+    W: Float
+    L: Float
+    wieght: Float
+    color: String!
+    material: String!
+  }
   type Query {
     getProducts: [Product]
     getProduct(productId: ID!): Product
@@ -53,7 +70,7 @@ module.exports = gql`
   type Mutation {
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
-    createProduct(body: String!): Product!
+    createProduct(ProductInput: ProductInput): Product
     deleteProduct(productID: ID!): String!
     createCategory(body: String!): Product!
     deleteCategory(productID: ID!): String!
