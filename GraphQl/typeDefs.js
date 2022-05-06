@@ -19,10 +19,10 @@ module.exports = gql`
     material: String!
     createdAt: String!
   }
-  type Category{
-    id:ID!
-    name:String!
-    parentId:Int
+  type Category {
+    id: ID!
+    name: String!
+    parentId: Int
   }
   type User {
     id: ID!
@@ -40,15 +40,22 @@ module.exports = gql`
   type Query {
     getProducts: [Product]
     getProduct(productId: ID!): Product
-    # TODO GetCategory Product
-    getCatgoreis: [Category]
-    # TODO getbestPriceProdict
-    # TODO getProdcuts List via categry
+    getUsers: [User]
+    getUser(userId: ID!): User
+    getCategory(categoryId: ID!): Category
+    getBestSellProdocts: [Product]
+    getBestSellProdoctsByCategory(categoryId: ID!): [Product]
+    getBestRateProdocts: [Product]
+    getBestRateProdoctsByCategory(categoryId: ID!): [Product]
+    getProdoctsListByCategory(categoryId: ID!): [Product]
+    getCatgories: [Category]
   }
   type Mutation {
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
     createProduct(body: String!): Product!
     deleteProduct(productID: ID!): String!
+    createCategory(body: String!): Product!
+    deleteCategory(productID: ID!): String!
   }
 `;
