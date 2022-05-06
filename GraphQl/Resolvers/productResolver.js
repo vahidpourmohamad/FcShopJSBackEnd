@@ -2,6 +2,36 @@ const product = require("../../Models/productsModel.js");
 const { AuthenticationError } = require("apollo-server");
 
 module.exports = {
+  Query: {
+    async getProducts() {
+      try {
+        const products = await product.find().sort({ createdAt: -1 });
+        return products;
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
+    async getProduct(_, { productId }) {
+      try {
+        const products = await product
+          .findById(productId)
+          .sort({ createdAt: -1 });
+        return products;
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
+    async getProdoctsListByCategory(_, { categoryName }) {
+      try {
+        const products = await product
+          .find({ category: categoryName })
+          .sort({ createdAt: -1 });
+        return products;
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
+  },
   Mutation: {
     async deleteProduct(_, { productID }) {
       try {

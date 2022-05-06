@@ -63,14 +63,23 @@ module.exports = gql`
   type Query {
     getProducts: [Product]
     getProduct(productId: ID!): Product
+    # TODO
     getUsers: [User]
+    # TODO
     getUser(userId: ID!): User
+    # TODO
     getCategory(categoryId: ID!): Category
+    # TODO
     getBestSellProdocts: [Product]
+    # TODO
     getBestSellProdoctsByCategory(categoryId: ID!): [Product]
+    # TODO
     getBestRateProdocts: [Product]
-    getBestRateProdoctsByCategory(categoryId: ID!): [Product]
-    getProdoctsListByCategory(categoryId: ID!): [Product]
+    # TODO
+    getBestRateProdoctsByCategory(categoryName: String!): [Product]
+    # DONE
+    getProdoctsListByCategory(categoryName: String!): [Product]
+    # TODO
     getCatgories: [Category]
   }
   type Mutation {
