@@ -13,10 +13,10 @@ module.exports = {
     },
     async getProduct(_, { productId }) {
       try {
-        const products = await product
+        const findedProduct = await product
           .findById(productId)
           .sort({ createdAt: -1 });
-        return products;
+        return findedProduct;
       } catch (error) {
         throw new Error(error);
       }

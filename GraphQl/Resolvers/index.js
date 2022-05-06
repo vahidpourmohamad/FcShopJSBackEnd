@@ -10,6 +10,8 @@ module.exports = {
   },
   Query: {
     ...productResolvers.Query,
+    ...categoryResolvers.Query,
+    ...usersResolvers.Query,
   },
   Mutation: {
     ...usersResolvers.Mutation,
