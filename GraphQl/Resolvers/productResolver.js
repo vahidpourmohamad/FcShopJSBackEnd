@@ -62,6 +62,7 @@ module.exports = {
           wieght,
           color,
           material,
+          images
         },
       }
     ) {
@@ -82,6 +83,7 @@ module.exports = {
         color: color,
         material: material,
         createdAt: new Date().toISOString(),
+        images:images,
       });
       const res = await newProduct.save();
       return {

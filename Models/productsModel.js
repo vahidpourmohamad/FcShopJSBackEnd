@@ -23,6 +23,7 @@ const productSchema = new Schema({
   color: { type: String, default: "WeiB" },
   material: { type: String, default: "None" },
   createdAt: { type: String, default: "None" },
+  images: { type: [String], default: ["p2a.png", "p2b.png"] },
 });
 
 module.exports = model("Product", productSchema);

@@ -18,6 +18,7 @@ module.exports = gql`
     color: String!
     material: String!
     createdAt: String!
+    images: [String]
   }
   type Category {
     id: ID!
@@ -59,6 +60,7 @@ module.exports = gql`
     wieght: Float
     color: String!
     material: String!
+    images: [String]
   }
   type Query {
     getProducts: [Product]
