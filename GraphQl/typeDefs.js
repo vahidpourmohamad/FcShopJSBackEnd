@@ -25,12 +25,27 @@ module.exports = gql`
     name: String!
     parentId: Int
   }
+
+  type Comment {
+    id: ID!
+    userCreatedId: String!
+    productId: String!
+    body: String!
+    point: String!
+    createdAt: String!
+  }
   type User {
     id: ID!
     email: String!
     token: String!
     username: String!
     createdAt: String!
+  }
+  input CommentInput {
+    userCreatedId: String!
+    productId: String!
+    body: String!
+    point: String!
   }
   input RegisterInput {
     username: String!
@@ -78,8 +93,12 @@ module.exports = gql`
     getBestRateProdoctsByCategory(categoryName: String!): [Product]
     getProdoctsListByCategory(categoryName: String!): [Product]
     getCatgories: [Category]
+    getCommentsByProduct(ProductID:String!):[Comment]
+    getHighestPointedComment: [Comment]
   }
   type Mutation {
+    createComment(CommentInput: CommentInput): Comment!
+    deleteComment(CommentID: ID!): String!
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
     createProduct(ProductInput: ProductInput): Product
