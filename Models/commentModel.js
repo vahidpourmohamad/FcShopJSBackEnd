@@ -6,6 +6,6 @@ const commentSchema = new Schema({
   body: String,
   point: String,
   createdAt: String,
-});
+}); 
 
 module.exports = model("Comment", commentSchema);

@@ -81,7 +81,7 @@ module.exports = {
         confirmPassword
       );
       if (!valid) {
-        throw new UserInputError("Errors", { errors });
+        throw new UserInputError("Bad User Input", { errors });
       }
       const user = await User.findOne({ username });
       if (user) {
