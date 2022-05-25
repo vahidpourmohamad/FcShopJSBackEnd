@@ -1,6 +1,7 @@
 const { gql } = require("apollo-server");
 
 module.exports = gql`
+  scalar Upload
   type Product {
     id: ID!
     name: String!
@@ -24,8 +25,16 @@ module.exports = gql`
     id: ID!
     name: String!
     parentId: Int
+    imageSrc: String!
+    uniUrl: String!
+    createdAt: String!
   }
-
+  type UploadedFileResponse {
+    filename: String!
+    mimetype: String!
+    encoding: String!
+    url: String!
+  }
   type Comment {
     id: ID!
     userCreatedId: String!
@@ -84,16 +93,16 @@ module.exports = gql`
     getUser(userId: ID!): User
     getCategory(categoryId: ID!): Category
     # TODO
-    getBestSellProdocts: [Product]
+    getBestSellProducts: [Product]
     # TODO
-    getBestSellProdoctsByCategory(categoryId: ID!): [Product]
+    getBestSellProductsByCategory(categoryId: ID!): [Product]
     # TODO
-    getBestRateProdocts: [Product]
+    getBestRateProducts: [Product]
     # TODO
-    getBestRateProdoctsByCategory(categoryName: String!): [Product]
-    getProdoctsListByCategory(categoryName: String!): [Product]
+    getBestRateProductsByCategory(categoryName: String!): [Product]
+    getProductsListByCategory(categoryName: String!): [Product]
     getCatgories: [Category]
-    getCommentsByProduct(ProductID:String!):[Comment]
+    getCommentsByProduct(ProductID: String!): [Comment]
     getHighestPointedComment: [Comment]
   }
   type Mutation {
@@ -105,5 +114,6 @@ module.exports = gql`
     deleteProduct(productID: ID!): String!
     createCategory(CategoryInput: CategoryInput!): Category!
     deleteCategory(CategoryID: ID!): String!
+    singleUpload(file: Upload!): UploadedFileResponse!
   }
 `;

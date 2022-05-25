@@ -5,7 +5,7 @@ module.exports = {
     async getCatgories() {
       try {
         const categories = await category.find().sort({ createdAt: -1 });
-        return prodcategoriesucts;
+        return categories;
       } catch (error) {
         throw new Error(error);
       }

@@ -21,7 +21,7 @@ module.exports = {
         throw new Error(error);
       }
     },
-    async getProdoctsListByCategory(_, { categoryName }) {
+    async getProductsListByCategory(_, { categoryName }) {
       try {
         const products = await product
           .find({ category: categoryName })
@@ -62,7 +62,7 @@ module.exports = {
           wieght,
           color,
           material,
-          images
+          images,
         },
       }
     ) {
@@ -83,7 +83,7 @@ module.exports = {
         color: color,
         material: material,
         createdAt: new Date().toISOString(),
-        images:images,
+        images: images,
       });
       const res = await newProduct.save();
       return {
