@@ -1,5 +1,5 @@
-const { gql } = require("apollo-server");
-
+// const { gql } = require("apollo-server");
+const {  gql } = require("apollo-server-express");
 module.exports = gql`
   scalar Upload
   type Product {
