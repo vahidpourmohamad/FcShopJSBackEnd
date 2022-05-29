@@ -64,7 +64,7 @@ module.exports = gql`
   }
   input CategoryInput {
     name: String!
-    parentId: Int
+    parentId: String!
     imageSrc: String
     uniUrl: String
   }
