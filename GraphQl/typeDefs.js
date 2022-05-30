@@ -67,7 +67,7 @@ module.exports = gql`
     parentId: String!
     imageSrc: String
     uniUrl: String
-  }
+  } 
   input ProductInput {
     pcode: String!
     name: String!

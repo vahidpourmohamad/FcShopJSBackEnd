@@ -11,7 +11,7 @@ module.exports = {
       const { createReadStream, filename, mimetype, encoding } =
         await file.file;
       let UID = makeUniqueId(10);
-      const pathName = path.join("d:/developing", `/public/${UID}.jpg`);
+      const pathName = path.join(`${UID}.jpg`);
       const stream = createReadStream();
       await stream.pipe(fs.createWriteStream(pathName));
       return {
