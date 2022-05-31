@@ -11,14 +11,15 @@ module.exports = {
       const { createReadStream, filename, mimetype, encoding } =
         await file.file;
       let UID = makeUniqueId(10);
-      const pathName = path.join(`${UID}.jpg`);
+      const pathName = path.join(`D:/developing/FcShop.js/FcShop.js/public/Assets/uploads/images/${UID}.jpg`);
+
       const stream = createReadStream();
       await stream.pipe(fs.createWriteStream(pathName));
       return {
         filename: `${UID}.jpg`,
         mimetype: mimetype,
         encoding: encoding,
-        url: pathName,
+        url: `${UID}.jpg`,
       };
     },
   },
